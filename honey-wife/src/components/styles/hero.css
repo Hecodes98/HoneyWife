@@ -1,0 +1,29 @@
+.Hero {
+  background-image: url("../../images/bg.png");
+  height: 90vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  flex-direction: column;
+}
+
+.firstTitle {
+  margin-bottom: 3px;
+  padding-bottom: 3px;
+}
+
+.secondTitle {
+  margin-bottom: 10px;
+  padding-bottom: 10px;
+}
+
+.ButtonWrapper {
+  margin: 20px;
+  padding: 10px;
+}
+
+.start__Button {
+  width: 55%;
+  border-radius: 15px !important;
+}

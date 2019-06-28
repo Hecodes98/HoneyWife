@@ -1,0 +1,40 @@
+.Navbar {
+  width: 100%;
+  padding: 1.3rem 0;
+  background-color: #7a8f99;
+  display: flex;
+  justify-content: space-between;
+}
+.wrapperImage {
+  display: flex;
+}
+.navbar__brand {
+  color: #fff;
+  display: flex;
+  align-items: center;
+}
+
+.navbar__brand:hover {
+  color: #fff;
+  text-decoration: none;
+}
+
+.container__items {
+  list-style: none;
+  display: flex;
+  justify-content: space-evenly;
+  margin-bottom: 0;
+}
+
+.container__items li {
+  padding: 0 10px;
+}
+
+.navbar-item a {
+  color: #fff;
+}
+
+.navbar-item a:hover {
+  color: #fff;
+  text-decoration: none;
+}

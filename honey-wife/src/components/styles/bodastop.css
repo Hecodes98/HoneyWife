@@ -1,0 +1,49 @@
+.Weddings__top {
+  margin-top: 30px;
+}
+
+.Top__title {
+  text-align: center;
+}
+
+hr {
+  height: 1px;
+  width: 65%;
+  background-color: #7a8f99;
+}
+
+.boda__item--image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  position: relative;
+}
+
+.dcto {
+  position: absolute;
+  padding: 25px 15px 10px 15px;
+  left: 50px;
+  background: #fff;
+  font-weight: 800;
+  transition: ease 0.5s;
+}
+
+.dcto:hover {
+  padding: 30px 15px 10px 15px;
+  background: #7a8f99;
+}
+
+.info__title--hr {
+  margin: 0 0 15px 0;
+  width: 100%;
+  background-color: #7a8f99;
+}
+
+.boda__item {
+  padding: 20px 0;
+}
+
+.buttonBuy {
+  margin: 10px 0;
+  text-align: center;
+}
