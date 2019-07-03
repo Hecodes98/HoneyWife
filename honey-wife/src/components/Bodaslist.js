@@ -28,6 +28,7 @@ class Bodaslist extends React.Component {
                   <h6>{boda.bar}</h6>
                   <h6>{boda.music}</h6>
                   <h6>{boda.product}</h6>
+                  <span className="dcto-boda">30% Dcto</span>
                 </div>
                 <div className="buttonBuy">
                   <button type="button" className="btn btn-success">
@@ -38,6 +39,15 @@ class Bodaslist extends React.Component {
             </div>
           );
         })}
+        <span className="more">
+          <button
+            onClick={this.props.onClick}
+            type="button"
+            className="btn btn-warning"
+          >
+            Ver mas...
+          </button>
+        </span>
       </React.Fragment>
     );
   }

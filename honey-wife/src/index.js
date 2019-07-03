@@ -1,9 +1,10 @@
 import React from "react";
 import ReactDOM from "react-dom";
-import Home from "./pages/home";
 import "bootstrap/dist/css/bootstrap.css";
 import "./styles/global.css";
 
+import App from "./components/App";
+
 const container = document.getElementById("app");
 
-ReactDOM.render(<Home />, container);
+ReactDOM.render(<App />, container);

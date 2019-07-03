@@ -1,0 +1,18 @@
+.catalogo--imagen__container img {
+  width: 127px;
+  height: 127px;
+  border-radius: 50%;
+}
+
+.catalogo__item {
+  text-align: center;
+  padding: 10px 0;
+}
+
+.catalogo__button {
+  text-align: center;
+}
+
+.catalogo__button button {
+  color: #fff;
+}

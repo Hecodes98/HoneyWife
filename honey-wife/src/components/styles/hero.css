@@ -1,11 +1,18 @@
 .Hero {
-  background-image: url("../../images/bg.png");
+  background-image: url("../../images/hero.jpeg");
   height: 90vh;
   display: flex;
   justify-content: center;
   align-items: center;
   text-align: center;
   flex-direction: column;
+  -webkit-clip-path: circle(97.5% at 27% 20%);
+  clip-path: circle(97.5% at 27% 20%);
+  background-position: bottom;
+}
+
+.Hero__wrapper {
+  color: #fff;
 }
 
 .firstTitle {
@@ -26,4 +33,13 @@
 .start__Button {
   width: 55%;
   border-radius: 15px !important;
+  background-color: #ffc101 !important;
+  border: #f3ca4c !important;
+  padding: 0.775rem 2rem !important;
+  transition: ease 0.5s !important;
+  font-weight: 800;
+}
+
+.start__Button:hover {
+  background-color: #f3ca4c !important;
 }

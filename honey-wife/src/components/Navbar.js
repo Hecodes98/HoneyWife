@@ -1,5 +1,6 @@
 import React from "react";
 import "./styles/navbar.css";
+import logo from "../images/Logo.png";
 
 class Navbar extends React.Component {
   render() {
@@ -8,7 +9,7 @@ class Navbar extends React.Component {
         <div className="Navbar container-fluid">
           <div className="wrapperImage">
             <a href="/" className="navbar__brand">
-              NavbarLogo
+              <img className="navbar__logo" src={logo} alt="Logo" />
             </a>
           </div>
           <div className="items">

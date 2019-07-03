@@ -1,7 +1,7 @@
 .Navbar {
   width: 100%;
   padding: 1.3rem 0;
-  background-color: #7a8f99;
+  background-color: #fff;
   display: flex;
   justify-content: space-between;
 }
@@ -14,9 +14,16 @@
   align-items: center;
 }
 
+.navbar__logo {
+  width: 44%;
+}
+
 .navbar__brand:hover {
   color: #fff;
   text-decoration: none;
+}
+.items {
+  display: flex;
 }
 
 .container__items {
@@ -24,6 +31,7 @@
   display: flex;
   justify-content: space-evenly;
   margin-bottom: 0;
+  align-items: center;
 }
 
 .container__items li {
@@ -31,10 +39,11 @@
 }
 
 .navbar-item a {
-  color: #fff;
+  color: #f3ca4c;
+  font-weight: 800;
 }
 
 .navbar-item a:hover {
-  color: #fff;
+  color: #c7a230;
   text-decoration: none;
 }

@@ -2,8 +2,10 @@ import React from "react";
 import Navbar from "../components/Navbar";
 import Hero from "../components/Hero";
 import Bodaslist from "../components/Bodaslist";
+import BodasReales from "../components/BodasReales";
+import Catalogo from "../components/Catalogo";
 import "../components/styles/bodastop.css";
-import image from "../images/bg.png";
+import deco from "../images/decoracion/decoracion2.jpg";
 class home extends React.Component {
   state = {
     data: [
@@ -18,7 +20,7 @@ class home extends React.Component {
         music: "Musica",
         product: "productos",
         price: "10'000.000",
-        image: image
+        image: deco
       },
       {
         id: "2",
@@ -31,7 +33,7 @@ class home extends React.Component {
         music: "Musica",
         product: "productos",
         price: "10'000.000",
-        image: image
+        image: deco
       },
       {
         id: "3",
@@ -44,14 +46,35 @@ class home extends React.Component {
         music: "Musica",
         product: "productos",
         price: "10'000.000",
-        image: image
+        image: deco
       }
     ]
+  };
+
+  handleClick = e => {
+    let { data } = this.state;
+    const newData = [
+      ...data,
+      {
+        id: "4",
+        name: "Nombre de la boda",
+        placeCeremony: "Lugar de la ceremonia",
+        placeParty: "Lugar de la fiesta (Decoracion)",
+        transport: "Transporte (Decoracion)",
+        buffet: "Banquete x50",
+        bar: "Bar x50",
+        music: "Musica",
+        product: "productos",
+        price: "10'000.000",
+        image: deco
+      }
+    ];
+    this.setState({ data: newData });
+    console.log(this.state);
   };
   render() {
     return (
       <React.Fragment>
-        <Navbar />
         <Hero />
         <section className="Weddings__top">
           <div className="Top__title">
@@ -60,7 +83,24 @@ class home extends React.Component {
           </div>
           <hr />
           <div className="container container-fluid">
-            <Bodaslist bodas={this.state.data} />
+            <Bodaslist bodas={this.state.data} onClick={this.handleClick} />
+          </div>
+        </section>
+        <BodasReales />
+        <section className="catalogo">
+          <div className="container">
+            <h5 className="Bodas__title">Bodas Reales</h5>
+            <p className="text-center">
+              Vestidos, trajes, anillos, peinados y accesorios, para la novia y
+              el novio.
+            </p>
+            <hr />
+            <Catalogo />
+            <div className="catalogo__button">
+              <button type="button" className="btn btn-warning">
+                Ver catalogo
+              </button>
+            </div>
           </div>
         </section>
       </React.Fragment>
