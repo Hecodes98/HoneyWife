@@ -1,78 +1,65 @@
 import React from "react";
-import Navbar from "../components/Navbar";
+import { Link } from "react-router-dom";
 import Hero from "../components/Hero";
 import Bodaslist from "../components/Bodaslist";
 import BodasReales from "../components/BodasReales";
 import Catalogo from "../components/Catalogo";
 import "../components/styles/bodastop.css";
-import deco from "../images/decoracion/decoracion2.jpg";
+import api from "../api";
+
 class home extends React.Component {
-  state = {
-    data: [
-      {
-        id: "1",
-        name: "Nombre de la boda",
-        placeCeremony: "Lugar de la ceremonia",
-        placeParty: "Lugar de la fiesta (Decoracion)",
-        transport: "Transporte (Decoracion)",
-        buffet: "Banquete x50",
-        bar: "Bar x50",
-        music: "Musica",
-        product: "productos",
-        price: "10'000.000",
-        image: deco
-      },
-      {
-        id: "2",
-        name: "Nombre de la boda",
-        placeCeremony: "Lugar de la ceremonia",
-        placeParty: "Lugar de la fiesta (Decoracion)",
-        transport: "Transporte (Decoracion)",
-        buffet: "Banquete x50",
-        bar: "Bar x50",
-        music: "Musica",
-        product: "productos",
-        price: "10'000.000",
-        image: deco
-      },
-      {
-        id: "3",
-        name: "Nombre de la boda",
-        placeCeremony: "Lugar de la ceremonia",
-        placeParty: "Lugar de la fiesta (Decoracion)",
-        transport: "Transporte (Decoracion)",
-        buffet: "Banquete x50",
-        bar: "Bar x50",
-        music: "Musica",
-        product: "productos",
-        price: "10'000.000",
-        image: deco
-      }
-    ]
+  constructor(props) {
+    super(props);
+    this.state = {
+      commentsToRender: 3,
+      endComment: undefined,
+      loading: true,
+      error: null,
+      data: undefined
+    };
+  }
+
+  componentDidMount() {
+    this.fetchData();
+  }
+
+  fetchData = async () => {
+    this.setState({ loading: true, error: null });
+    try {
+      const data = await api.bodasTop.list();
+      this.setState({ loading: false, endComment: data.length, data: data });
+    } catch (error) {
+      this.setState({ loading: false, error: error });
+    }
   };
 
+  componentDidUpdate(prevProps, prevState) {
+    console.log("5. componenDidUpdate");
+    console.log({
+      prevProps: prevProps,
+      prevState: prevState
+    });
+    console.log({
+      props: this.props,
+      state: this.state
+    });
+  }
+
+  componentWillUnmount() {
+    console.log("component Will Unmount");
+  }
+
   handleClick = e => {
-    let { data } = this.state;
-    const newData = [
-      ...data,
-      {
-        id: "4",
-        name: "Nombre de la boda",
-        placeCeremony: "Lugar de la ceremonia",
-        placeParty: "Lugar de la fiesta (Decoracion)",
-        transport: "Transporte (Decoracion)",
-        buffet: "Banquete x50",
-        bar: "Bar x50",
-        music: "Musica",
-        product: "productos",
-        price: "10'000.000",
-        image: deco
-      }
-    ];
-    this.setState({ data: newData });
-    console.log(this.state);
+    if (this.state.commentsToRender === this.state.endComment) {
+      console.log("i cannot");
+    } else {
+      this.setState({ commentsToRender: this.state.commentsToRender + 1 });
+    }
   };
   render() {
+    if (this.state.loading) {
+      return "Loading...";
+    }
     return (
       <React.Fragment>
         <Hero />
@@ -83,7 +70,11 @@ class home extends React.Component {
           </div>
           <hr />
           <div className="container container-fluid">
-            <Bodaslist bodas={this.state.data} onClick={this.handleClick} />
+            <Bodaslist
+              commentsToRender={this.state.commentsToRender}
+              bodas={this.state.data}
+              onClick={this.handleClick}
+            />
           </div>
         </section>
         <BodasReales />
@@ -97,9 +88,13 @@ class home extends React.Component {
             <hr />
             <Catalogo />
             <div className="catalogo__button">
-              <button type="button" className="btn btn-warning">
+              <Link
+                to="/clipart"
+                type="button"
+                className="btn btn-warning catalogo__button-btn"
+              >
                 Ver catalogo
-              </button>
+              </Link>
             </div>
           </div>
         </section>

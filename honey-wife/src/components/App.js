@@ -1,5 +1,6 @@
 import React from "react";
 import home from "../pages/home";
+import clipArt from "../pages/ClipArt";
 import NotFound from "../pages/NotFound";
 
 import Layout from "./Layout";
@@ -12,6 +13,8 @@ function App() {
       <Layout>
         <Switch>
           <Route exact path="/home" component={home} />
+          <Route exact path="/" component={home} />
+          <Route exact path="/clipArt" component={clipArt} />
           <Route component={NotFound} />
         </Switch>
       </Layout>

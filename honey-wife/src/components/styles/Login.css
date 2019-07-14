@@ -1,0 +1,18 @@
+.btn__login {
+  margin: 20px 0;
+  color: #fff;
+}
+
+.title__login {
+  margin: 20px 0;
+}
+
+.input__modal {
+  width: 100%;
+}
+
+@media only screen and (min-width: 472px) {
+  .input__modal {
+    width: 370px;
+  }
+}

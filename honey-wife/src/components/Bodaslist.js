@@ -4,13 +4,13 @@ class Bodaslist extends React.Component {
   render() {
     return (
       <React.Fragment>
-        {this.props.bodas.map(boda => {
+        {this.props.bodas.slice(0, this.props.commentsToRender).map(boda => {
           return (
             <div key={boda.id} className="boda__item row">
               <div className="boda__item--imageWrapper col-12 col-md-6">
                 <img
                   className="boda__item--image"
-                  src={boda.image}
+                  src={boda.imagen}
                   alt="Imagen de la boda"
                 />
                 <span className="dcto">

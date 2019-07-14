@@ -1,0 +1,139 @@
+.Modal {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  display: grid;
+  -ms-flex-line-pack: center;
+  align-content: center;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  background-color: rgba(0, 0, 0, 0.2);
+  -webkit-animation: fade-in 0.5s;
+  animation: fade-in 0.5s;
+  z-index: 11;
+}
+
+.ModalInactivo {
+  -webkit-animation: fade-out 0.5s;
+  animation: fade-out 0.5s;
+}
+
+.ModalInfo {
+  max-width: 550px;
+  background-color: #fff;
+  margin: 0.625rem;
+  padding: 0 1.25rem;
+  border-radius: 0.3125rem;
+}
+
+.imageWrapper {
+  text-align: center;
+}
+
+.Modal__image {
+  width: 85%;
+  padding: 10px;
+  margin: 0 auto;
+}
+
+.Modal__info {
+  text-align: center;
+}
+.hr__modal {
+  margin: 0 auto;
+  margin-bottom: 10px;
+}
+
+.h6__modal {
+  margin: 5px;
+}
+
+.buttonWrapper {
+  text-align: center;
+  padding: 10px;
+}
+
+.Modal__button {
+  width: 75%;
+}
+
+.buttonWrapper__cerrar {
+  text-align: center;
+  padding: 0px;
+}
+
+@-webkit-keyframes fade-in {
+  0% {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+@keyframes fade-in {
+  0% {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+@-webkit-keyframes fade-out {
+  0% {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+  }
+}
+@keyframes fade-out {
+  0% {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+  }
+}
+@-webkit-keyframes modal-in {
+  0% {
+    -webkit-transform: translateY(-6vh);
+    transform: translateY(-6vh);
+  }
+  to {
+    -webkit-transform: translateY(0);
+    transform: translateY(0);
+  }
+}
+@keyframes modal-in {
+  0% {
+    -webkit-transform: translateY(-6vh);
+    transform: translateY(-6vh);
+  }
+  to {
+    -webkit-transform: translateY(0);
+    transform: translateY(0);
+  }
+}
+@-webkit-keyframes modal-out {
+  0% {
+    -webkit-transform: translateY(0);
+    transform: translateY(0);
+  }
+  to {
+    -webkit-transform: translateY(-6vh);
+    transform: translateY(-6vh);
+  }
+}
+@keyframes modal-out {
+  0% {
+    -webkit-transform: translateY(0);
+    transform: translateY(0);
+  }
+  to {
+    -webkit-transform: translateY(-6vh);
+    transform: translateY(-6vh);
+  }
+}

@@ -1,49 +1,106 @@
-.Navbar {
-  width: 100%;
-  padding: 1.3rem 0;
-  background-color: #fff;
+nav {
   display: flex;
-  justify-content: space-between;
-}
-.wrapperImage {
-  display: flex;
-}
-.navbar__brand {
-  color: #fff;
-  display: flex;
+  justify-content: space-around;
   align-items: center;
+  min-height: 8vh;
 }
 
 .navbar__logo {
-  width: 44%;
+  width: 50%;
 }
 
-.navbar__brand:hover {
-  color: #fff;
-  text-decoration: none;
-}
-.items {
-  display: flex;
+.logo {
+  font-size: 20px;
 }
 
-.container__items {
-  list-style: none;
+.nav-links {
   display: flex;
-  justify-content: space-evenly;
+  justify-content: space-around;
+  width: 60%;
   margin-bottom: 0;
-  align-items: center;
 }
 
-.container__items li {
-  padding: 0 10px;
+@media only screen and (max-width: 768px) {
+  body {
+    overflow-x: hidden;
+  }
+  .nav-links {
+    flex-direction: column;
+    align-items: center;
+    position: absolute;
+    right: 0;
+    height: 92vh;
+    top: 8vh;
+    background: #fff;
+    z-index: 99;
+    width: 50%;
+    transform: translateX(100%);
+    transition: transform 0.5s ease-in;
+  }
+
+  .nav-links li {
+    opacity: 1;
+  }
+
+  .burguer {
+    display: block !important;
+  }
 }
 
-.navbar-item a {
-  color: #f3ca4c;
-  font-weight: 800;
+.nav-links li {
+  list-style: none;
 }
 
-.navbar-item a:hover {
-  color: #c7a230;
+.nav-links a {
   text-decoration: none;
+  letter-spacing: 3px;
+  font-weight: bold;
+  font-size: 14px;
+  color: #ffc101;
+}
+
+.burguer {
+  display: none;
+  cursor: pointer;
+}
+
+.burguer div {
+  width: 25px;
+  height: 3px;
+  background-color: rgb(0, 0, 0);
+  margin: 5px;
+  transition: all 0.5s ease;
+}
+
+@media only screen and (min-width: 1024px) {
+  .nav-links {
+    width: 50%;
+  }
+}
+
+.nav-active {
+  transform: translateX(0%);
+}
+
+@keyframes navLinkFade {
+  from {
+    opacity: 0;
+    transform: translateX(50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0px);
+  }
+}
+
+.toggle .line1 {
+  transform: rotate(-45deg) translate(-5px, 6px);
+}
+
+.toggle .line2 {
+  opacity: 0;
+}
+
+.toggle .line3 {
+  transform: rotate(45deg) translate(-5px, -6px);
 }

@@ -13,6 +13,8 @@
   text-align: center;
 }
 
-.catalogo__button button {
+.catalogo__button-btn {
   color: #fff;
+  border-color: none;
+  border-radius: 20px !important;
 }
